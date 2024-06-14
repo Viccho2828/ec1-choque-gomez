@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        Calculo de Almacen
+    </div>
+    <div class="card-body">
+        <form method="post" th:action="@{/almacen}" th:object="${objalmacen}">
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="txtcantidad" th:field="*{cantidad}" placeholder="name@example.com">
+                <label for="txtcantidad">Ingrese la cantidad</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="txtnota2" th:field="*{precio}" placeholder="name@example.com">
+                <label for="txtnota2">Ingrese el precio</label>
+            </div>
+            <button type="submit" class="btn btn-dark">CALCULAR</button>
+            <hr />
+            <div th:if="${mostrar}" class="alert alert-primary" role="alert">
+                <span th:text="${pagoneto} ?: ''" ></span>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>
